@@ -10,7 +10,14 @@ enum ControlMessage
   NODE_ONLINE
 };
 
-extern QueueHandle_t xInputEventQueue;
 extern QueueHandle_t xControlMessageQueue;
+
+struct InputEvent
+{
+  uint8_t keyCode;
+  uint8_t eventType;
+};
+
+extern QueueHandle_t xInputEventQueue;
 
 #endif

@@ -3,12 +3,6 @@
 
 #include <Arduino.h>
 
-struct InputEvent
-{
-    uint8_t keyCode;
-    uint8_t eventType;
-};
-
 class Button
 {
 public:
