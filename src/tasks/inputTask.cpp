@@ -19,10 +19,13 @@ void onPowerButtonLongPress(uint8_t keycode)
 }
 
 void inputTask(void *pvParameters)
+
 {
-  Button powerButton(0, PIN_POW_SW, 15, INPUT_PULLDOWN, false);
+  Button powerButton(0, PIN_POW_SW, 15, INPUT_PULLUP, true);
 
   powerButton.begin();
+
+  pinMode(PIN_POW_SW, INPUT_PULLUP);
 
   powerButton.registerReleaseCallback(onPowerButtonShortPress);
   powerButton.registerLongPressCallback(1500, onPowerButtonLongPress);
