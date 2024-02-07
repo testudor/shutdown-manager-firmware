@@ -33,6 +33,9 @@ void nodeWatchdogTask(void *pvParameters)
   irq_set_exclusive_handler(ALARM_IRQ, nodeTimeout);
   irq_set_enabled(ALARM_IRQ, false);
 
+  pinMode(PIN_HEARTBEAT_1, INPUT_PULLDOWN);
+  pinMode(PIN_HEARTBEAT_2, INPUT_PULLDOWN);
+
   while (true)
   {
     // Continue every 500 ms or when notified by ISR
